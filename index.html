@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/buefy/dist/buefy.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <title>PACIAL II</title>
+    <!-- UIkit CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.20/dist/css/uikit.min.css" />
+</head>
+
+<body>
+    <div id="app">
+        <!-- Buefy components goes here -->
+        <div class="navbarmain">
+            <template>
+                <b-navbar type="is-dark" centered>
+                    <template #brand>
+                        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                            <img
+                                src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                                alt="Icons"
+                            >
+                        </b-navbar-item>
+                    </template>
+                    <template #start>
+                        
+                        <b-navbar-item href="#">
+                            Home
+                        </b-navbar-item>
+                    </template>
+                    <template #end>
+                        <b-navbar-item tag="div">
+                            <b-button type="is-primary" inverted outlined> Repositorio </b-button>
+                        </b-navbar-item>
+                    </template>
+                </b-navbar>
+            </template>
+            <div class="Heromain" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+            <section class="hero is-medium is-link">
+                <div class="container">
+                <div class="hero-body">
+                  <p class="title">
+                    Segundo Parcial de Programacion IV
+                  </p>
+                  <p class="subtitle">
+                    Integrantes: <br>
+                    Luis Jose Arias Reyes <br>
+                    Jeremy Ernesto Aguilar Saravia
+                  </p>
+                </div>
+            </div>
+              </section>
+            </div>
+            <div class="bodymain mt-6 has-text-centered">
+                <div class="container">
+                    <h1 class="title is-2">Modals</h1>
+                        <div class="buttons">
+                            <b-button
+                                label="Mostar Luis"
+                                type="is-primary"
+                                size="is-medium"
+                                @click="isCardModalActive = true"></b-button>
+                                <b-button
+                                label="Mostar Jeremy"
+                                type="is-success"
+                                size="is-medium"
+                                @click="isModalJeremyActive = true"> </b-button>
+                        </div>
+                        <b-progress size="is-small" type="is-info" class="mt-5"></b-progress>
+                <div class="autocomplete mt-5" uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+                    <template>
+                        <section>
+                            <h1 class="title is-2">Ejemplo utilizando el componente autocomplete</h1>
+                            <h3 class="subtitle is-4 mt-2">En este ejemplo se carga un arreglo de marcas que ensamblan computadoras</h3>
+                            <b-field label="Busca la marca de computadora">
+                                <b-autocomplete
+                                    rounded
+                                    v-model="name"
+                                    :data="filteredMarcasArray"
+                                    placeholder="ej. ASUS"
+                                    icon="magnify"
+                                    clearable
+                                    @select="option => selected = option">
+                                    <template #empty>Sin resultados encontrados</template>
+                                </b-autocomplete>
+                            </b-field>
+                            <p class="content"><b class="subtitle is-4">Seleccionado:</b> {{ selected }}</p>
+                        </section>
+                    </template>
+                </di>
+                </div>
+                <b-progress size="is-small" type="is-success" class="mt-5"></b-progress>
+                <div class="parallax mt-5" uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
+                    <h2 class="title is-2">Ejemplo parallax</h2>
+                    <div class="uk-height-large uk-background-cover uk-overflow-hidden uk-light uk-flex uk-flex-top" style="background-image: url('assets/img2.png');">
+                        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+                            <h1 uk-parallax="opacity: 0,1,1; y: -100,0,0; x: 100,100,0; scale: 2,1,1; viewport: 0.5;">Star Wars</h1>
+                            <p uk-parallax="opacity: 0,1,1; y: 100,0,0; x: -100,-100,0; scale: 0.5,1,1; viewport: 0.5;">Ejemplos de parallax con titulo y texto :D.</p>
+                        </div>
+                    </div>
+                </div>
+                <b-progress size="is-small" type="is-info" class="mt-5"></b-progress>
+                <div class="video mt-5" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                    <h1 class="title is-1">Video insertado:</h1>
+                <iframe width="1000" height="600" src="https://www.youtube.com/embed/IwvhH3islZw" title="The Forest II" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <b-progress size="is-small" type="is-success" class="mt-5"></b-progress>
+            <div class="clock mt-5 mb-5" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                <h2 class="title is-2">Ejemplo con componente Clockpicker</h2>
+                    <b-field label="Seleccionar Hora" >
+                        <b-clockpicker
+                            rounded
+                            placeholder="Click para seleccionar..."
+                            type="is-success"
+                            icon="clock"
+                            >
+                        </b-clockpicker>
+                    </b-field>
+                    <br><br><br><br><br>
+            </div>
+            <b-progress size="is-small" type="is-info" class="mt-5"></b-progress>
+            </div>
+            <b-modal v-model="isModalJeremyActive" :width="640" scroll="keep">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="/assets/pino.svg" alt="Image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="/assets/pino.svg" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">Jeremy Ernesto Aguilar Saravia</p>
+                                <p class="subtitle is-6">@Jeremy07552622</p>
+                            </div>
+                        </div>
+    
+                        <div class="content">
+                            <small>11:09 PM - 4 May 2021</small>
+                        </div>
+                    </div>
+                </div>
+            </b-modal>
+    
+            <b-modal v-model="isCardModalActive" :width="640" scroll="keep">
+                <div class="card">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="/assets/police1.svg" alt="Image">
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-48x48">
+                                    <img src="/assets/police1.svg" alt="Image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">Luis Jose Arias Reyes</p>
+                                <p class="subtitle is-6">@Luis78791</p>
+                            </div>
+                        </div>
+    
+                        <div class="content">
+                        </div>
+                    </div>
+                </div>
+            </b-modal>
+
+            <footer class="footer">
+                <div class="content has-text-centered">
+                  <p>
+                    <strong>SEGUNDO PARCIAL</strong> by <a href="https://twitter.com/Luis78791">Luis Jose Arias Reyes</a>. Programacion Computacional IV <a href="https://twitter.com/Jeremy07552622">Jeremy Ernesto Aguilar Saravia</a>
+                  </p>
+                </div>
+              </footer>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <!-- Full bundle -->
+    <script src="https://unpkg.com/buefy/dist/buefy.min.js"></script>
+
+    <!-- Individual components -->
+    <script src="https://unpkg.com/buefy/dist/components/table"></script>
+    <script src="https://unpkg.com/buefy/dist/components/input"></script>
+    <!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.20/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.20/dist/js/uikit-icons.min.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+        data() {
+            return {
+                isModalJeremyActive: false,
+                isCardModalActive: false,
+                marcas: [
+                    'ASUS',
+                    'MSI',
+                    'LENOVO',
+                    'APPLE',
+                    'SAMSUNG',
+                    'ACER',
+                    'DELL',
+                    'TOSHIBA',
+                    'ALIENWARE',
+                    'HP'
+                ],
+                name: '',
+                selected: null
+            }        
+        },
+        computed: {
+            filteredMarcasArray() {
+                return this.marcas.filter((option) => {
+                    return option
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(this.name.toLowerCase()) >= 0
+                })
+            }
+        }  
+        })
+
+        
+    </script>
+</body>
+</html>
