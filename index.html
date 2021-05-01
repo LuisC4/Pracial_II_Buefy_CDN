@@ -18,9 +18,9 @@
             <template>
                 <b-navbar type="is-dark" centered>
                     <template #brand>
-                        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+                        <b-navbar-item>
                             <img
-                                src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png"
+                                src="assets/code.svg"
                                 alt="Icons"
                             >
                         </b-navbar-item>
@@ -32,14 +32,14 @@
                         </b-navbar-item>
                     </template>
                     <template #end>
-                        <b-navbar-item tag="div">
-                            <b-button type="is-primary" inverted outlined> Repositorio </b-button>
+                        <b-navbar-item href="https://github.com/LuisC4/Pracial_II_Buefy_CDN" target="_blank">
+                            Repositorio
                         </b-navbar-item>
                     </template>
                 </b-navbar>
             </template>
             <div class="Heromain" uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
-            <section class="hero is-medium is-link">
+            <section class="hero is-medium is-link is-info">
                 <div class="container">
                 <div class="hero-body">
                   <p class="title">
@@ -60,7 +60,7 @@
                         <div class="buttons">
                             <b-button
                                 label="Mostar Luis"
-                                type="is-primary"
+                                type="is-info"
                                 size="is-medium"
                                 @click="isCardModalActive = true"></b-button>
                                 <b-button
